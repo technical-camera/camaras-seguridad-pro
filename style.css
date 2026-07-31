@@ -1,771 +1,611 @@
-/*====================================================
-  CÁMARAS SEGURIDAD PRO
-  Hoja de estilos principal
-=====================================================*/
-
-/*==============================
-  GOOGLE FONTS
-==============================*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-/*==============================
-  VARIABLES
-==============================*/
-:root{
-
-    --primary:#0EA5E9;
-    --primary-dark:#0369A1;
-    --secondary:#38BDF8;
-
-    --bg:#050816;
-    --bg-light:#0F172A;
-    --card:rgba(15,23,42,.65);
-
-    --white:#FFFFFF;
-    --text:#E2E8F0;
-    --gray:#94A3B8;
-
-    --success:#25D366;
-
-    --radius:18px;
-
-    --shadow:0 15px 40px rgba(0,0,0,.35);
-
-    --transition:.35s ease;
-
-}
-
-/*==============================
-  RESET
-==============================*/
-
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',Arial,sans-serif;
 }
+
 
 html{
-
-    scroll-behavior:smooth;
-
+scroll-behavior:smooth;
 }
+
 
 body{
 
-    font-family:'Poppins',sans-serif;
-
-    background:var(--bg);
-
-    color:var(--white);
-
-    overflow-x:hidden;
+background:#050b16;
+color:white;
 
 }
 
-/*==============================
-  SCROLLBAR
-==============================*/
 
-::-webkit-scrollbar{
-    width:10px;
-}
-
-::-webkit-scrollbar-track{
-    background:#020617;
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:var(--primary);
-
-    border-radius:20px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-    background:#38BDF8;
-
-}
-
-/*==============================
-  PARTÍCULAS
-==============================*/
-
-#particles-js{
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:-2;
-
-}
-
-/*==============================
-  FONDO
-==============================*/
-
-body::before{
-
-    content:"";
-
-    position:fixed;
-
-    inset:0;
-
-    background:
-
-    radial-gradient(circle at top right,
-    rgba(14,165,233,.25),
-    transparent 45%),
-
-    radial-gradient(circle at bottom left,
-    rgba(56,189,248,.18),
-    transparent 35%);
-
-    z-index:-3;
-
-}
-
-/*==============================
-  ENLACES
-==============================*/
-
-a{
-
-    text-decoration:none;
-
-    color:inherit;
-
-}
-
-img{
-
-    display:block;
-
-    max-width:100%;
-
-}
-
-/*==============================
-  CONTENEDOR
-==============================*/
-
-.container{
-
-    width:min(1200px,92%);
-
-    margin:auto;
-
-}
-
-/*==============================
-  HEADER
-==============================*/
+/* HEADER */
 
 header{
 
-    position:fixed;
+position:fixed;
+top:0;
+width:100%;
+height:80px;
 
-    width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
 
-    top:0;
+padding:0 8%;
 
-    left:0;
+background:rgba(5,11,22,0.90);
 
-    z-index:999;
+backdrop-filter:blur(10px);
 
-    transition:.4s;
+z-index:1000;
 
-}
-
-.navbar{
-
-    width:min(1300px,94%);
-
-    margin:auto;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:18px 0;
+border-bottom:1px solid rgba(0,174,255,.2);
 
 }
 
-.logo{
 
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    font-weight:700;
-
-    font-size:1.2rem;
-
-}
 
 .logo img{
 
-    width:50px;
+width:75px;
 
 }
 
-/*==============================
-  MENÚ
-==============================*/
+
+
+nav a{
+
+color:white;
+text-decoration:none;
+
+margin-left:30px;
+
+font-size:16px;
+
+transition:.3s;
+
+}
+
+
+
+nav a:hover{
+
+color:#00aaff;
+
+}
+
+
+
 
 .menu{
 
-    display:flex;
+display:none;
 
-    gap:30px;
-
-    list-style:none;
+font-size:30px;
 
 }
 
-.menu a{
 
-    color:var(--text);
 
-    transition:var(--transition);
 
-    font-weight:500;
 
-}
-
-.menu a:hover{
-
-    color:var(--primary);
-
-}
-
-/*==============================
-  BOTÓN WHATSAPP
-==============================*/
-
-.btn-whatsapp{
-
-    background:var(--success);
-
-    color:white;
-
-    padding:12px 24px;
-
-    border-radius:50px;
-
-    font-weight:600;
-
-    display:flex;
-
-    gap:10px;
-
-    align-items:center;
-
-    transition:.3s;
-
-}
-
-.btn-whatsapp:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:0 12px 30px rgba(37,211,102,.35);
-
-}
-
-/*==============================
-  HERO
-==============================*/
+/* HERO */
 
 .hero{
 
-    min-height:100vh;
+height:100vh;
 
-    display:flex;
+display:flex;
 
-    justify-content:center;
+align-items:center;
 
-    align-items:center;
+padding:0 8%;
 
-    text-align:center;
+background:
 
-    padding:100px 20px;
+linear-gradient(
+rgba(0,0,0,.65),
+rgba(0,0,0,.8)
+),
+
+url("img/camara1.jpg");
+
+
+background-size:cover;
+
+background-position:center;
+
+
+}
+
+
+
+.hero-text{
+
+max-width:650px;
+
+animation:entrada 1.5s ease;
 
 }
 
-.hero-content{
 
-    max-width:900px;
-
-}
-
-.badge{
-
-    display:inline-block;
-
-    padding:10px 20px;
-
-    border:1px solid rgba(255,255,255,.15);
-
-    border-radius:50px;
-
-    margin-bottom:25px;
-
-    background:rgba(255,255,255,.05);
-
-    backdrop-filter:blur(10px);
-
-}
 
 .hero h1{
 
-    font-size:4rem;
+font-size:48px;
 
-    line-height:1.1;
-
-    margin-bottom:25px;
+line-height:1.2;
 
 }
 
-.hero h1 span{
 
-    color:var(--primary);
+
+.hero h2{
+
+font-size:55px;
+
+color:#00aaff;
+
+margin:15px 0;
 
 }
+
+
 
 .hero p{
 
-    font-size:1.15rem;
+font-size:20px;
 
-    color:var(--gray);
+line-height:1.6;
 
-    line-height:1.8;
-
-    margin-bottom:40px;
+margin-bottom:35px;
 
 }
 
-.hero-buttons{
 
-    display:flex;
 
-    justify-content:center;
 
-    gap:20px;
+.btn{
 
-    flex-wrap:wrap;
+display:inline-block;
 
-}
+padding:15px 35px;
 
-/*==============================
-  BOTONES
-==============================*/
+background:#00aaff;
 
-.btn-primary,
-.btn-secondary{
+color:white;
 
-    padding:16px 34px;
+border-radius:40px;
 
-    border-radius:50px;
+text-decoration:none;
 
-    font-weight:600;
+font-weight:bold;
 
-    transition:.35s;
+transition:.4s;
 
 }
 
-.btn-primary{
 
-    background:linear-gradient(135deg,
-    var(--primary),
-    var(--secondary));
 
-    color:white;
+.btn:hover{
 
-}
+background:#0080c9;
 
-.btn-primary:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:0 15px 40px rgba(14,165,233,.35);
+transform:translateY(-5px);
 
 }
 
-.btn-secondary{
 
-    border:2px solid var(--primary);
 
-}
 
-.btn-secondary:hover{
 
-    background:var(--primary);
 
-}
 
-/*==============================
-  SCROLL DOWN
-==============================*/
+/* SECCIONES */
 
-.scroll-down{
 
-    position:absolute;
+section{
 
-    bottom:35px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    animation:bounce 2s infinite;
+padding:90px 8%;
 
 }
 
-@keyframes bounce{
 
-    0%,100%{
 
-        transform:translate(-50%,0);
+.titulo{
 
-    }
+text-align:center;
 
-    50%{
+font-size:38px;
 
-        transform:translate(-50%,12px);
+margin-bottom:50px;
 
-    }
+color:#00aaff;
 
 }
 
-/*==============================
-  RESPONSIVE
-==============================*/
 
-.menu-toggle{
 
-    display:none;
+
+
+
+/* SERVICIOS */
+
+
+.cards{
+
+display:flex;
+
+gap:30px;
+
+justify-content:center;
+
+flex-wrap:wrap;
 
 }
 
-@media(max-width:980px){
 
-.menu{
 
-display:none;
+.card{
+
+background:#0c1728;
+
+padding:35px;
+
+width:300px;
+
+border-radius:20px;
+
+text-align:center;
+
+transition:.4s;
+
+border:1px solid rgba(0,170,255,.15);
 
 }
 
-.menu-toggle{
+
+
+.card:hover{
+
+transform:translateY(-15px);
+
+box-shadow:0 15px 40px rgba(0,170,255,.25);
+
+}
+
+
+
+.card i{
+
+font-size:45px;
+
+color:#00aaff;
+
+margin-bottom:20px;
+
+}
+
+
+
+.card h3{
+
+font-size:24px;
+
+margin-bottom:15px;
+
+}
+
+
+
+.card p{
+
+color:#cbd5e1;
+
+line-height:1.6;
+
+}
+
+
+
+
+
+
+/* NOSOTROS */
+
+
+#nosotros{
+
+background:#081321;
+
+}
+
+
+
+.about{
+
+text-align:center;
+
+}
+
+
+
+.about h2{
+
+font-size:38px;
+
+color:#00aaff;
+
+}
+
+
+
+.about p{
+
+font-size:20px;
+
+margin:25px auto;
+
+max-width:700px;
+
+line-height:1.7;
+
+}
+
+
+
+
+.numbers{
+
+display:flex;
+
+justify-content:center;
+
+gap:50px;
+
+margin-top:40px;
+
+flex-wrap:wrap;
+
+}
+
+
+
+.numbers div{
+
+background:#0c1728;
+
+padding:25px 40px;
+
+border-radius:15px;
+
+}
+
+
+
+.numbers strong{
 
 display:block;
 
-font-size:1.8rem;
+font-size:45px;
 
-cursor:pointer;
-
-}
-
-.hero h1{
-
-font-size:2.8rem;
+color:#00aaff;
 
 }
 
-}
 
-@media(max-width:600px){
 
-.hero h1{
+.numbers span{
 
-font-size:2.2rem;
+color:#ddd;
 
 }
 
-.hero p{
 
-font-size:1rem;
+
+
+
+/* GALERIA */
+
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
 
 }
 
-.btn-whatsapp{
+
+
+.gallery img{
+
+width:100%;
+
+height:230px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+transition:.4s;
+
+}
+
+
+
+.gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+
+
+/* CONTACTO */
+
+
+#contacto{
+
+text-align:center;
+
+background:#0c1728;
+
+}
+
+
+
+#contacto h2{
+
+font-size:40px;
+
+color:#00aaff;
+
+margin-bottom:20px;
+
+}
+
+
+
+#contacto p{
+
+font-size:20px;
+
+margin-bottom:30px;
+
+}
+
+
+
+
+
+
+
+footer{
+
+padding:25px;
+
+text-align:center;
+
+background:#02060c;
+
+color:#aaa;
+
+}
+
+
+
+
+
+
+/* ANIMACION */
+
+
+@keyframes entrada{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+
+
+
+
+/* CELULARES */
+
+
+@media(max-width:768px){
+
+
+
+nav{
 
 display:none;
 
-}
+position:absolute;
 
-}
-/*==============================
- MENÚ MÓVIL
-==============================*/
+top:80px;
 
-.menu.active{
+left:0;
 
-    display:flex;
+width:100%;
 
-    position:absolute;
+background:#050b16;
 
-    top:80px;
-
-    left:5%;
-
-    width:90%;
-
-    flex-direction:column;
-
-    background:rgba(5,8,22,.96);
-
-    backdrop-filter:blur(20px);
-
-    padding:30px;
-
-    border-radius:20px;
-
-    gap:20px;
-
-    box-shadow:0 20px 60px rgba(0,0,0,.45);
+padding:20px;
 
 }
 
-.menu.active a{
 
-    font-size:1.05rem;
 
-}
-/*==================================
-CONTADORES
-==================================*/
+nav a{
 
-.stats{
+display:block;
 
-    padding:90px 0;
+margin:20px;
 
 }
 
-.stats .container{
 
-    display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+.menu{
 
-    gap:30px;
+display:block;
 
 }
 
-.stat-card{
 
-    background:rgba(255,255,255,.05);
 
-    backdrop-filter:blur(18px);
+.hero h1{
 
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:22px;
-
-    padding:40px;
-
-    text-align:center;
-
-    transition:.35s;
+font-size:35px;
 
 }
 
-.stat-card:hover{
 
-    transform:translateY(-10px);
+.hero h2{
 
-    box-shadow:0 20px 50px rgba(14,165,233,.20);
-
-}
-
-.stat-card i{
-
-    font-size:48px;
-
-    color:var(--primary);
-
-    margin-bottom:20px;
+font-size:42px;
 
 }
 
-.stat-card h2{
 
-    font-size:3rem;
 
-    margin-bottom:10px;
+.hero p{
 
-}
-
-.stat-card p{
-
-    color:var(--gray);
-
-}
-/*=================================================
-                SERVICIOS
-=================================================*/
-
-.services{
-
-    padding:120px 0;
+font-size:17px;
 
 }
 
-.section-title{
 
-    text-align:center;
 
-    max-width:800px;
+.gallery{
 
-    margin:auto;
-
-    margin-bottom:70px;
+grid-template-columns:1fr;
 
 }
 
-.section-title span{
-
-    color:var(--primary);
-
-    font-weight:700;
-
-    letter-spacing:2px;
-
-}
-
-.section-title h2{
-
-    font-size:2.8rem;
-
-    margin:20px 0;
-
-}
-
-.section-title p{
-
-    color:var(--gray);
-
-    line-height:1.8;
-
-}
-
-.services-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-
-    gap:35px;
-
-}
-
-.service-card{
-
-    background:rgba(255,255,255,.05);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:22px;
-
-    padding:40px;
-
-    transition:.4s;
-
-    backdrop-filter:blur(15px);
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-.service-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:-100%;
-
-    width:100%;
-
-    height:4px;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        var(--primary),
-        transparent
-    );
-
-    transition:.6s;
-
-}
-
-.service-card:hover::before{
-
-    left:100%;
-
-}
-
-.service-card:hover{
-
-    transform:translateY(-12px);
-
-    box-shadow:0 25px 60px rgba(14,165,233,.20);
-
-}
-
-.service-icon{
-
-    width:80px;
-
-    height:80px;
-
-    border-radius:20px;
-
-    background:linear-gradient(
-        135deg,
-        var(--primary),
-        var(--secondary)
-    );
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    margin-bottom:25px;
-
-    font-size:34px;
-
-    color:white;
-
-}
-
-.service-card h3{
-
-    margin-bottom:18px;
-
-    font-size:1.35rem;
-
-}
-
-.service-card p{
-
-    color:var(--gray);
-
-    line-height:1.8;
 
 }
