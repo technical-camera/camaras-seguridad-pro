@@ -142,3 +142,13 @@ header.style.background="rgba(5,11,22,0.90)";
 
 
 });
+// EVITAR MENU CONTEXTUAL BASICO
+
+document.addEventListener(
+"contextmenu",
+function(e){
+
+e.preventDefault();
+
+}
+);
