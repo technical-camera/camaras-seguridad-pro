@@ -1,231 +1,144 @@
-/*======================================================
-  CÁMARAS SEGURIDAD PRO
-  Script principal
-======================================================*/
 
-// ============================================
-// MENÚ MÓVIL
-// ============================================
+// MENU MOVIL DV SECURITY
 
-const menuToggle = document.querySelector(".menu-toggle");
+
 const menu = document.querySelector(".menu");
+const nav = document.querySelector("nav");
 
-menuToggle?.addEventListener("click", () => {
-    menu.classList.toggle("active");
-});
 
-// Cerrar menú al hacer clic en un enlace
-document.querySelectorAll(".menu a").forEach(link => {
-    link.addEventListener("click", () => {
-        menu.classList.remove("active");
-    });
-});
+menu.addEventListener("click",()=>{
 
-// ============================================
-// HEADER AL HACER SCROLL
-// ============================================
-
-const header = document.getElementById("header");
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 80) {
-
-        header.style.background = "rgba(5,8,22,.90)";
-        header.style.backdropFilter = "blur(14px)";
-        header.style.boxShadow = "0 10px 30px rgba(0,0,0,.35)";
-
-    } else {
-
-        header.style.background = "transparent";
-        header.style.boxShadow = "none";
-        header.style.backdropFilter = "none";
-
-    }
+nav.classList.toggle("activo");
 
 });
 
-// ============================================
-// AOS
-// ============================================
 
-AOS.init({
 
-    duration: 900,
-    easing: "ease-out",
-    once: true
 
-});
 
-// ============================================
-// PARTÍCULAS
-// ============================================
+// CERRAR MENU AL SELECCIONAR OPCION
 
-particlesJS("particles-js", {
 
-    particles: {
+const enlaces = document.querySelectorAll("nav a");
 
-        number: {
-            value: 60
-        },
 
-        color: {
-            value: "#0EA5E9"
-        },
+enlaces.forEach(enlace=>{
 
-        shape: {
-            type: "circle"
-        },
 
-        opacity: {
-            value: 0.4
-        },
+enlace.addEventListener("click",()=>{
 
-        size: {
-            value: 3
-        },
-
-        line_linked: {
-
-            enable: true,
-
-            distance: 150,
-
-            color: "#0EA5E9",
-
-            opacity: 0.25,
-
-            width: 1
-
-        },
-
-        move: {
-
-            enable: true,
-
-            speed: 2
-
-        }
-
-    },
-
-    interactivity: {
-
-        events: {
-
-            onhover: {
-
-                enable: true,
-
-                mode: "grab"
-
-            }
-
-        }
-
-    }
+nav.classList.remove("activo");
 
 });
 
-// ============================================
-// EFECTO SUAVE AL APARECER
-// ============================================
-
-window.addEventListener("load", () => {
-
-    document.body.classList.add("loaded");
 
 });
 
-// ============================================
-// SCROLL SUAVE
-// ============================================
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-    anchor.addEventListener("click", function (e) {
 
-        e.preventDefault();
 
-        const destino = document.querySelector(this.getAttribute("href"));
 
-        if (destino) {
 
-            destino.scrollIntoView({
+// ANIMACION AL BAJAR
 
-                behavior: "smooth"
 
-            });
+const elementos = document.querySelectorAll(
+".card, .about, .gallery img, .numbers div"
+);
 
-        }
 
-    });
+
+const mostrarElemento = ()=>{
+
+
+elementos.forEach(elemento=>{
+
+
+const posicion = elemento.getBoundingClientRect().top;
+
+
+const pantalla = window.innerHeight;
+
+
+if(posicion < pantalla - 80){
+
+
+elemento.style.opacity="1";
+
+elemento.style.transform="translateY(0)";
+
+
+}
+
 
 });
 
-console.log("✅ Cámaras Seguridad PRO cargado correctamente.");
-// ============================================
-// CONTADORES ANIMADOS
-// ============================================
-
-const counters = document.querySelectorAll(".counter");
-
-const iniciarContadores = () => {
-
-    counters.forEach(counter => {
-
-        const objetivo = Number(counter.dataset.target);
-
-        let valor = 0;
-
-        const incremento = Math.max(1, objetivo / 80);
-
-        const actualizar = () => {
-
-            valor += incremento;
-
-            if (valor >= objetivo) {
-
-                counter.textContent = objetivo + "+";
-
-            } else {
-
-                counter.textContent = Math.floor(valor);
-
-                requestAnimationFrame(actualizar);
-
-            }
-
-        };
-
-        actualizar();
-
-    });
 
 };
 
-const statsSection = document.querySelector(".stats");
 
-let contadoresIniciados = false;
 
-const observer = new IntersectionObserver((entries) => {
 
-    entries.forEach(entry => {
 
-        if (entry.isIntersecting && !contadoresIniciados) {
 
-            iniciarContadores();
+// ESTADO INICIAL DE ANIMACION
 
-            contadoresIniciados = true;
 
-        }
+elementos.forEach(elemento=>{
 
-    });
+
+elemento.style.opacity="0";
+
+elemento.style.transform="translateY(40px)";
+
+elemento.style.transition="all .8s ease";
+
 
 });
 
-if (statsSection) {
 
-    observer.observe(statsSection);
+
+
+
+window.addEventListener(
+"scroll",
+mostrarElemento
+);
+
+
+
+mostrarElemento();
+
+
+
+
+
+
+// EFECTO HEADER AL DESPLAZAR
+
+
+const header=document.querySelector("header");
+
+
+window.addEventListener("scroll",()=>{
+
+
+if(window.scrollY>50){
+
+
+header.style.background="#02060c";
+
 
 }
+
+else{
+
+
+header.style.background="rgba(5,11,22,0.90)";
+
+
+}
+
+
+});
