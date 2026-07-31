@@ -558,7 +558,11 @@ padding:20px;
 
 }
 
+nav.activo{
 
+display:block;
+
+}
 
 nav a{
 
