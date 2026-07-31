@@ -503,3 +503,40 @@ display:none;
 }
 
 }
+/*==============================
+ MENÚ MÓVIL
+==============================*/
+
+.menu.active{
+
+    display:flex;
+
+    position:absolute;
+
+    top:80px;
+
+    left:5%;
+
+    width:90%;
+
+    flex-direction:column;
+
+    background:rgba(5,8,22,.96);
+
+    backdrop-filter:blur(20px);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    gap:20px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+}
+
+.menu.active a{
+
+    font-size:1.05rem;
+
+}
