@@ -1,1 +1,505 @@
+/*====================================================
+  CÁMARAS SEGURIDAD PRO
+  Hoja de estilos principal
+=====================================================*/
 
+/*==============================
+  GOOGLE FONTS
+==============================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*==============================
+  VARIABLES
+==============================*/
+:root{
+
+    --primary:#0EA5E9;
+    --primary-dark:#0369A1;
+    --secondary:#38BDF8;
+
+    --bg:#050816;
+    --bg-light:#0F172A;
+    --card:rgba(15,23,42,.65);
+
+    --white:#FFFFFF;
+    --text:#E2E8F0;
+    --gray:#94A3B8;
+
+    --success:#25D366;
+
+    --radius:18px;
+
+    --shadow:0 15px 40px rgba(0,0,0,.35);
+
+    --transition:.35s ease;
+
+}
+
+/*==============================
+  RESET
+==============================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--bg);
+
+    color:var(--white);
+
+    overflow-x:hidden;
+
+}
+
+/*==============================
+  SCROLLBAR
+==============================*/
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#020617;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#38BDF8;
+
+}
+
+/*==============================
+  PARTÍCULAS
+==============================*/
+
+#particles-js{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-2;
+
+}
+
+/*==============================
+  FONDO
+==============================*/
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at top right,
+    rgba(14,165,233,.25),
+    transparent 45%),
+
+    radial-gradient(circle at bottom left,
+    rgba(56,189,248,.18),
+    transparent 35%);
+
+    z-index:-3;
+
+}
+
+/*==============================
+  ENLACES
+==============================*/
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+/*==============================
+  CONTENEDOR
+==============================*/
+
+.container{
+
+    width:min(1200px,92%);
+
+    margin:auto;
+
+}
+
+/*==============================
+  HEADER
+==============================*/
+
+header{
+
+    position:fixed;
+
+    width:100%;
+
+    top:0;
+
+    left:0;
+
+    z-index:999;
+
+    transition:.4s;
+
+}
+
+.navbar{
+
+    width:min(1300px,94%);
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 0;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-weight:700;
+
+    font-size:1.2rem;
+
+}
+
+.logo img{
+
+    width:50px;
+
+}
+
+/*==============================
+  MENÚ
+==============================*/
+
+.menu{
+
+    display:flex;
+
+    gap:30px;
+
+    list-style:none;
+
+}
+
+.menu a{
+
+    color:var(--text);
+
+    transition:var(--transition);
+
+    font-weight:500;
+
+}
+
+.menu a:hover{
+
+    color:var(--primary);
+
+}
+
+/*==============================
+  BOTÓN WHATSAPP
+==============================*/
+
+.btn-whatsapp{
+
+    background:var(--success);
+
+    color:white;
+
+    padding:12px 24px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    display:flex;
+
+    gap:10px;
+
+    align-items:center;
+
+    transition:.3s;
+
+}
+
+.btn-whatsapp:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 30px rgba(37,211,102,.35);
+
+}
+
+/*==============================
+  HERO
+==============================*/
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:100px 20px;
+
+}
+
+.hero-content{
+
+    max-width:900px;
+
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:10px 20px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:50px;
+
+    margin-bottom:25px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(10px);
+
+}
+
+.hero h1{
+
+    font-size:4rem;
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+
+}
+
+.hero h1 span{
+
+    color:var(--primary);
+
+}
+
+.hero p{
+
+    font-size:1.15rem;
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+    margin-bottom:40px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+/*==============================
+  BOTONES
+==============================*/
+
+.btn-primary,
+.btn-secondary{
+
+    padding:16px 34px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.btn-primary{
+
+    background:linear-gradient(135deg,
+    var(--primary),
+    var(--secondary));
+
+    color:white;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 40px rgba(14,165,233,.35);
+
+}
+
+.btn-secondary{
+
+    border:2px solid var(--primary);
+
+}
+
+.btn-secondary:hover{
+
+    background:var(--primary);
+
+}
+
+/*==============================
+  SCROLL DOWN
+==============================*/
+
+.scroll-down{
+
+    position:absolute;
+
+    bottom:35px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    animation:bounce 2s infinite;
+
+}
+
+@keyframes bounce{
+
+    0%,100%{
+
+        transform:translate(-50%,0);
+
+    }
+
+    50%{
+
+        transform:translate(-50%,12px);
+
+    }
+
+}
+
+/*==============================
+  RESPONSIVE
+==============================*/
+
+.menu-toggle{
+
+    display:none;
+
+}
+
+@media(max-width:980px){
+
+.menu{
+
+display:none;
+
+}
+
+.menu-toggle{
+
+display:block;
+
+font-size:1.8rem;
+
+cursor:pointer;
+
+}
+
+.hero h1{
+
+font-size:2.8rem;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero h1{
+
+font-size:2.2rem;
+
+}
+
+.hero p{
+
+font-size:1rem;
+
+}
+
+.btn-whatsapp{
+
+display:none;
+
+}
+
+}
