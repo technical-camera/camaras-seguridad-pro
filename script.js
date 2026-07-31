@@ -164,3 +164,68 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 console.log("✅ Cámaras Seguridad PRO cargado correctamente.");
+// ============================================
+// CONTADORES ANIMADOS
+// ============================================
+
+const counters = document.querySelectorAll(".counter");
+
+const iniciarContadores = () => {
+
+    counters.forEach(counter => {
+
+        const objetivo = Number(counter.dataset.target);
+
+        let valor = 0;
+
+        const incremento = Math.max(1, objetivo / 80);
+
+        const actualizar = () => {
+
+            valor += incremento;
+
+            if (valor >= objetivo) {
+
+                counter.textContent = objetivo + "+";
+
+            } else {
+
+                counter.textContent = Math.floor(valor);
+
+                requestAnimationFrame(actualizar);
+
+            }
+
+        };
+
+        actualizar();
+
+    });
+
+};
+
+const statsSection = document.querySelector(".stats");
+
+let contadoresIniciados = false;
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting && !contadoresIniciados) {
+
+            iniciarContadores();
+
+            contadoresIniciados = true;
+
+        }
+
+    });
+
+});
+
+if (statsSection) {
+
+    observer.observe(statsSection);
+
+}
