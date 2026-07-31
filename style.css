@@ -1272,3 +1272,41 @@ color:#00aaff;
 margin-top:20px;
 
 }
+.social{
+
+margin:20px;
+
+}
+
+
+.social a{
+
+color:white;
+
+font-size:30px;
+
+margin:15px;
+
+transition:.3s;
+
+}
+
+
+
+.social a:hover{
+
+color:#00aaff;
+
+transform:translateY(-5px);
+
+}
+
+
+
+footer h3{
+
+color:#00aaff;
+
+font-size:30px;
+
+}
