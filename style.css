@@ -1149,59 +1149,46 @@ background:rgba(0,0,0,.65);
 z-index:-1;
 
 }
-/* SLIDER */
+/* SLIDER MEJORADO (CARRUSEL CONTINUO) */
 
-
-.slider{
-
-display:flex;
-
-gap:25px;
-
-overflow:hidden;
-
-animation:movimiento 20s linear infinite;
-
+#trabajos {
+  overflow: hidden; /* Evita que el carrusel deforme o ensanche la página */
 }
 
-
-
-.slide img{
-
-width:300px;
-
-height:220px;
-
-object-fit:cover;
-
-border-radius:20px;
-
+.slider {
+  display: flex;
+  gap: 25px;
+  width: max-content;
+  animation: movimiento 18s linear infinite;
 }
 
-
-
-@keyframes movimiento{
-
-
-from{
-
-transform:translateX(0);
-
+.slide {
+  flex-shrink: 0; /* Impide que las imágenes se aplasten */
 }
 
-
-to{
-
-transform:translateX(-600px);
-
+.slide img {
+  width: 280px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
+@keyframes movimiento {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-600px);
+  }
 }
 
-
-
-
-
+/* Ajuste rápido para móviles sin romper nada */
+@media (max-width: 768px) {
+  .slide img {
+    width: 220px;
+    height: 170px;
+  }
+}
 /* TESTIMONIOS */
 
 
